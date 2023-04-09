@@ -52,6 +52,45 @@ html {
         width: 1170px;
     }
  }
+ /* global components */
+ .main-title {
+    position: relative;
+    border: 3px solid black;
+    padding: 20px 30px;
+    width: fit-content;
+    margin: 100px auto;
+    text-transform: uppercase;
+    transition: 0.5s;
+ }
+ .main-title::before,
+ .main-title::after {
+    content: "";
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+ }
+ .main-title::before {
+    left: -30px;
+ }
+ .main-title::after {
+    right: -30px;
+ }
+ .main-title:hover::before {
+    animation: left-move 0.5s linear forwards;
+ }
+ .main-title:hover::after {
+    animation: right-move 0.5s linear forwards;
+ }
+ .main-title:hover {
+    color: white;
+    border: 3px solid white;
+    transition-delay: 0.5s;
+ }
+ /* global components */
 /* end global rules */
 /* start header */
 .header {
@@ -297,6 +336,34 @@ html {
     }
     40%, 60% {
         transform: translateY(-15px);
+    }
+}
+@keyframes left-move {
+    50% {
+        left: 0;
+        width: 15px;
+        height: 15px;
+    }
+    100% {
+        left: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 0;
+        z-index: -1;
+    }
+}
+@keyframes right-move {
+    50% {
+        right: 0;
+        width: 15px;
+        height: 15px;
+    }
+    100% {
+        right: 0;
+        width: 50%;
+        height: 100%;
+        border-radius: 0;
+        z-index: -1;
     }
 }
 /* end animation */
