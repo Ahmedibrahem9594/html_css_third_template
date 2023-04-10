@@ -5,6 +5,7 @@
     --sction-padding:100px;
     --main-transation:0.3s;
     --main-padding:100px;
+    --background-section:#ececec;
 }
 /* global rules */
 * {
@@ -381,6 +382,57 @@ html {
     animation: righ-arrow 0.5s linear infinite;
 }
 /* end article */
+/* start gallrey */
+.gallrey {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+    background-color: var(--background-section);
+    z-index: 1;
+}
+.gallrey .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(400px, 1fr));
+    gap: 40px;
+}
+.gallrey .box {
+    padding: 20px;
+    background-color: #dddddd;
+    box-shadow: 0 -5px 21px #f3f2f2;
+    transition: 0.7s;
+}
+
+.gallrey .image {
+    position: relative;
+    overflow: hidden;
+}
+.gallrey .image::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.33);
+    opacity: 0;
+    transition: 0.7s;
+    z-index: 1;
+}
+.gallrey .box:hover .image::before {
+  animation: flashing 0.7s;
+}
+.gallrey .image img {
+    max-width: 100%;
+    transition: var(--main-transation);
+}
+.gallrey .box:hover .image img {
+    transform: rotate(4deg) scale(1.1) ;
+ }
+ .gallrey .box:hover  {
+    transform: translateY(10px) ;
+ }
+/* end gallrey */
 /* Start animation */
 @keyframes img-up-down {
     0%, 100% {
@@ -428,6 +480,16 @@ html {
 @keyframes righ-arrow {
     100% {
         transform: translateX(10px);
+    }
+}
+@keyframes flashing {
+    0%, 40% {
+        opacity: 1;
+    }
+    100% {
+        width: 200%;
+        height: 200%;
+        opacity: 0;
     }
 }
 /* end animation */
