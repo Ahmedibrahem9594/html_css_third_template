@@ -571,7 +571,62 @@ html {
 
 
 /* end features */
+/* start testmonial */
+.testmonials {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+    background-color: var(--background-section);
+    z-index: 1;
+}
+.testmonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    gap: 40px;
+    row-gap: 80px;
+}
+.testmonials .container .box {
+    position: relative;
+    box-shadow: 0 0 10px rgb(0 0 0 / 9%);
+    background-color: white;
+    border-bottom: 2px solid #777;
+}
 
+.testmonials .container .box img {
+    width: 100px;
+    max-width: 100%;
+    position: absolute;
+    right: 0px;
+    background-color: var(--background-section);
+    border-radius: 50%;
+    bottom: 70%;
+    border: 7px solid var(--background-section);
+}
+.testmonials .container .box h3 {
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.testmonials .container .box .title {
+    margin-left: 10px;
+    color: #777;
+    margin-bottom: 10px;
+    display: block;
+}
+.testmonials .container .rate {
+    margin-left: 10px;
+}
+.testmonials .container .rate .filled {
+    color: #f5c206;
+}
+.testmonials .container .box p{
+    margin-left: 10px;
+    line-height: 1.7;
+    color: #6e6e6e;
+    margin-bottom: 20px;
+}
+/* end testmonial */
 
 /* Start animation */
 @keyframes img-up-down {
