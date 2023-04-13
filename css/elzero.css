@@ -642,6 +642,7 @@ html {
 .team .container .box {
     position: relative;
     overflow: hidden;
+    transition: var(--main-transation);
 }
 .team .container .box::before {
     content: "";
@@ -672,6 +673,11 @@ html {
         height: 10%;
     }
 }
+.team .container .box:hover {
+    transform: translateY(-20px);
+    box-shadow: 0 15px 31px rgb(0 0 0 / 30%);
+}
+
 .team .container .box:hover::before {
     width: 100%;
 }
@@ -690,6 +696,12 @@ html {
     border-radius: 62%;
     border: 18px solid white;
     margin: 0 75px;
+    transition: var(--main-transation);
+}
+.team .container .box:hover .data .image img {
+    border-color: #ccc;
+    transform: translateX(-50px)  scale(1.1);
+    opacity: 0.8;
 }
 .team .container .box .data .social {
     display: flex;
@@ -749,6 +761,96 @@ html {
     margin-left: 30px;
  }
 /* end team */
+/* start services */
+.services {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;
+    background-color: var(--background-section);
+    z-index: 1;
+}
+.services .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px, 1fr));
+    gap: 40px;
+}
+.services .container .box {
+    background-color: white;
+    position: relative;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    height: 200px;
+    counter-increment: services;
+    transition: var(--main-transation);
+}
+.services .container .box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0%;
+    height: 4px;
+    background-color: var(--main-color);
+    transition: var(--main-transation);
+}
+.services .container .box:hover::before {
+    width: 100%;
+}
+.services .container .box:hover {
+    transform: translateY(-10px);
+}
+
+.services .container .box i {
+    color: #ccc;
+    font-size: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 50px auto;
+}
+.services .container .box h3 {
+    text-align: center;
+    color: var(--main-color);
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+}
+.services .container .box .info {
+    position: relative;
+}
+.services .container .box .info::before {
+    content: "0" counter(services);
+    background-color: var(--main-color);
+    color: white;
+    position: absolute;
+    width: 22%;
+    height: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 8px; 
+}
+.services .container .box .info::after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: calc(100% - 0.1px);
+    left: 68px;
+    top: 0;
+    background: #CCC;
+    transform: skewX(-29deg);
+}
+.services .container .box .info a {
+    text-align: right;
+    color: var(--main-color);
+    display: block;
+    padding: 15px;
+}
+/* end services */
 /* Start animation */
 @keyframes img-up-down {
     0%, 100% {
