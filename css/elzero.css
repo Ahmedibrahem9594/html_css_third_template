@@ -1317,7 +1317,6 @@ html {
     padding-top: var(--main-padding);
     padding-bottom: var(--main-padding);
     position: relative;   
-    content: "";
     background-image: url("..\\images\\stats.jpg");
     background-size: cover;
 }
@@ -1397,6 +1396,122 @@ html {
     font-style: italic;
 }
 /* end stats */
+/* start discount */
+.discount {
+    padding-top: var(--main-padding);
+    padding-bottom: var(--main-padding);
+    position: relative;   
+    display: flex;
+    flex-wrap: wrap;
+    height: 100vh;
+}
+.discount .image {
+    background-image: url("..\\images\\discount-back01.jpg");
+    background-size: cover;
+    position: relative;
+    flex-basis: 50%;
+    color: white;
+}
+@media (max-width:991px) {
+    .discount .image {
+        flex-basis: 100%;
+    }
+    
+}
+.discount .image::before {
+    content: "";
+    background-color:hsla(207, 90%, 54%, 0.862);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.discount .image i {
+    font-size: 319px;
+    display: block;
+    text-align: center;
+    padding-top: 200px;
+}
+@media (max-width:991px) {
+    .discount .image i {
+        font-size: 150px;
+        margin: 0 auto;
+        padding: 140px;
+    }   
+}
+.discount .form {
+    flex-basis: 50%;
+    margin: 20px auto;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.discount .form .input {
+    display: block;
+    padding: 15px 10px;
+    margin: 10px;
+    border: none;
+    border-bottom: 1px solid var(--background-section);
+    width: 100%;
+    max-width: 100%;
+    caret-color: var(--main-color);
+}
+.discount .form .input:focus {
+    outline: none;
+}
+.discount .form .input:focus::placeholder {
+    opacity: 1;
+    transition: var(--main-transation);
+}
+.discount .form .input:focus::placeholder {
+    opacity: 0;
+}
+.discount .form textarea.input {
+    resize: none;
+    min-height: 200px;
+}
+.discount .form  [type="submit"] {
+    background-color: var(--main-color);
+    display: block;
+    margin: 30px auto;
+    padding: 20px 15px;
+    width: 100%;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: var(--main-transation);
+}
+.discount .form  [type="submit"]:hover {
+    background-color: var(--alternate-color);
+}
+.discount .content {
+    position: relative;
+}
+.discount .content h2 {
+    margin: 60px auto;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+}
+.discount .content p {
+    line-height: 1.6;
+    text-align: center;
+    max-width: 500px;
+    margin: 10px auto;
+}
+@media (max-width:991px) {
+    .discount .content p{
+        max-width: 350px;
+    }
+    .discount .content h2 {
+        font-size: 22px;
+    }
+}
+/* end discount */
 /* Start animation */
 @keyframes img-up-down {
     0%, 100% {
