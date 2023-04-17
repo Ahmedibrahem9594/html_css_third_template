@@ -1398,12 +1398,16 @@ html {
 /* end stats */
 /* start discount */
 .discount {
-    padding-top: var(--main-padding);
-    padding-bottom: var(--main-padding);
     position: relative;   
     display: flex;
     flex-wrap: wrap;
     height: 100vh;
+}
+@media (max-width:991px) {
+    .discount {
+        margin-bottom: 350px;
+    }
+
 }
 .discount .image {
     background-image: url("..\\images\\discount-back01.jpg");
@@ -1508,10 +1512,146 @@ html {
         max-width: 350px;
     }
     .discount .content h2 {
-        font-size: 22px;
+        font-size: 20px;
     }
 }
 /* end discount */
+/* start footer */
+.footer {
+    padding: 20px 0;
+    background-color: #242424;
+}
+@media (max-width:991px) {
+    .footer {
+        text-align: center;
+    }
+
+}
+.footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(250px, 1fr));
+    gap: 40px;
+    position: relative;
+}
+.footer .container .box h3 {
+    font-size: 30px;
+    color: white;
+    margin: 10px auto;
+}
+.footer .container .box .social {
+    display: flex;
+    gap: 17px;
+}
+@media (max-width:991px) {
+    .footer .container .box .social {
+        justify-content: center;
+    }
+    
+}
+.footer .container .box .social a {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    display: block;
+    background-color: #191919;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    margin: 0 0 20px;
+}
+.footer .container .box .social .facebook:hover  {
+    background-color: #1877f2;
+}
+.footer .container .box .social .youtube:hover  {
+    background-color: #ff0000;
+}
+.footer .container .box .social .twitter:hover  {
+    background-color: #1da1f2;
+}
+
+.footer .container .box .text {
+    line-height: 2;
+    color: #777;
+}
+.footer .container .box .links {
+    margin-top: 30px;
+}
+.footer .container .box .links li {
+    margin-bottom: 30px;
+    transition: var(--main-transation);
+}
+.footer .container .box .links li:not(:last-child) {
+    border-bottom: 2px solid #444;
+    padding-bottom: 10px;
+}
+.footer .container .box .links li a {
+    color: #777;
+    text-transform: uppercase;
+}
+.footer .container .box .links li:hover  {
+    padding-left: 20px;
+}
+.footer .container .box .links li a::before {
+    font-family: "Font Awesome\ 5 Free";
+    content: "\f101";
+    font-weight: 900;
+    color: var(--main-color);
+    margin-right: 10px;
+}
+.footer .container .box .line {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin: 30px 0;
+    color: #777;
+}
+@media (max-width:991px) {
+    .footer .container .box .line {
+        flex-direction: column;
+    }
+    
+}
+.footer .container .box .line i {
+    color: var(--main-color);
+}
+.footer .container .box .line .info {
+    line-height: 1.7;
+    flex: 1;
+}
+.footer .container .box .line .info span {
+    display: block;
+}
+.footer .container .footer-gallery {
+    margin-top: 30px;
+}
+.footer .container .footer-gallery img {
+    width: 100px;
+    border: 3px solid #777;
+}
+@media (max-width:991px) {
+    .footer .container .footer-gallery img{
+        width: 60px;
+        margin-bottom: 20px;
+    }
+
+}
+.footer .copyright {
+    text-align: center;
+    color: white;
+    text-transform: uppercase;
+    padding: 20px 0 0;
+    font-size: 20px;
+    border-top: 2px solid #777;
+}
+.footer .copyright span {
+    color: red;
+}
+@media (max-width:991px) {
+
+}
+/* end footer */
 /* Start animation */
 @keyframes img-up-down {
     0%, 100% {
