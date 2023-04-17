@@ -92,6 +92,17 @@ html {
     border: 3px solid white;
     transition-delay: 0.5s;
  }
+ .spikes::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 40px;
+    top: 0;
+    background-image: linear-gradient(135deg, white 25%, transparent 25%),
+                        linear-gradient(225deg, white 25%, transparent 25%);
+    background-size:  30px;
+    z-index: 5;
+ }
  /* global components */
 /* end global rules */
 /* start header */
